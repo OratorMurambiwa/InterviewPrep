@@ -1,5 +1,5 @@
 # Unknown_Title
-# https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/submissions/1822972201/?envType=problem-list-v2&envId=oizxjoit
+# https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/?envType=problem-list-v2&envId=oizxjoit
 # Language: Unknown
 # Difficulty: Medium
 
@@ -10,7 +10,8 @@
 #         self.left = None
 #         self.right = None
 class Solution(object):
-    def lowestCommonAncestor(self, root, p, q):
+    def lowestCommonAncestor(self, root, p, 
+q):
         """
         :type root: TreeNode
         :type p: TreeNode
@@ -19,4 +20,3 @@ class Solution(object):
         """
         if not root:
             return None
-        curr = root
