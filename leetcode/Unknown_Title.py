@@ -1,5 +1,5 @@
 # Unknown_Title
-# https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/?envType=problem-list-v2&envId=oizxjoit
+# https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/submissions/1822970400/?envType=problem-list-v2&envId=oizxjoit
 # Language: Unknown
 # Difficulty: Medium
 
