@@ -3,7 +3,9 @@
 # Language: Python
 # Difficulty: Unspecified
 
-class Solution:
-    def searchInsert(self, nums: List[int], target: int) -> int:
-        
+                r = m -1
+            else:
+                l = m + 1
+        return l
+
         
