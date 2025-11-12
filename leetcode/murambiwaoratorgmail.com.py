@@ -1,15 +1,15 @@
 # murambiwaorator@gmail.com
-# https://neetcode.io/problems/search-insert-position?list=neetcode250
+# https://neetcode.io/problems/guess-number-higher-or-lower?list=neetcode250
 # Language: Python
 # Difficulty: Unspecified
 
-class Solution:
-    def searchInsert(self, nums: List[int], target: int) -> int:
-        l, r = 0, len(nums) - 1
 
         while l <= r:
             m = (l+r)//2
-            if nums[m] == target:
-                return m
 
-            if nums[m] > target:
+            if guess(m) == 0:
+                return m
+            elif guess(m) < 0:
+                r = m - 1
+            else:
+                l = m + 1
