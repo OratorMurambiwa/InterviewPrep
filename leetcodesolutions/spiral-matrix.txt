@@ -1,0 +1,23 @@
+            toprowborder += 1
+
+                res.append(matrix[toprowborder][col])
+
+            for col in range(leftcolborder, rightcolborder + 1):
+
+
+        while toprowborder <= bottomrowborder and leftcolborder <= rightcolborder:
+        rightcolborder = len(matrix[0]) -1
+        leftcolborder = 0
+        bottomrowborder = len(matrix) -1
+        toprowborder = 0
+
+        res = []
+
+            return []
+        if not matrix:
+        """
+        :rtype: List[int]
+        :type matrix: List[List[int]]
+        """
+    def spiralOrder(self, matrix):
+class Solution(object):
