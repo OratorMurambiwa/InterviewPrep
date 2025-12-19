@@ -1,0 +1,24 @@
+            for row in range(topborder, bottomborder + 1):
+
+            topborder += 1
+
+                val += 1
+                matrix[topborder][col] = val
+            for col in range(leftborder, rightborder + 1):
+
+        while topborder <= bottomborder and leftborder <= rightborder:
+        
+        val = 1
+
+        rightborder = n - 1
+        leftborder = 0
+        bottomborder = n - 1
+        topborder = 0
+
+        matrix = [[0 for _ in range(n)] for _ in range(n)]
+        """
+        :rtype: List[List[int]]
+        :type n: int
+        """
+    def generateMatrix(self, n):
+class Solution(object):
