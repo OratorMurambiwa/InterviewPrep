@@ -1,0 +1,24 @@
+
+                    c +=1
+                    r -=1
+                else:
+                    c +=1
+                elif r == 0:
+                    r +=1
+                if c == cols -1:
+            if (r+c) % 2 == 0: #even so go up and then right
+
+            res.append(mat[r][c])
+        for _ in range(rows * cols):
+        res = []
+
+        rows, cols = len(mat), len(mat[0])
+        r = c= 0
+        """
+        all cells in a diagonal have the same sum for their indicies
+        so we can use that to determine even and odd columns
+        :type mat: List[List[int]]
+        :rtype: List[int]
+        """
+    def findDiagonalOrder(self, mat):
+class Solution(object):
