@@ -1,0 +1,20 @@
+class Solution(object):
+    def findDiagonalOrder(self, nums):
+        """
+        :type nums: List[List[int]]
+        :rtype: List[int]
+        """
+        groups = defaultdict(list)
+
+        for r in range(len(nums)):
+            for c in range(len(nums[r])):
+                groups[r+c].append(nums[r][c])
+
+        res = []
+        for sumd in sorted(groups.keys()):
+            res.extend(groups[sumd][::-1])
+        return res
+                    
+
+
+        
