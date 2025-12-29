@@ -1,0 +1,23 @@
+# Last updated: 29/12/2025, 03:04:05
+class Solution(object):
+    def searchRange(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        indices = []
+        res = []
+
+        for i, num in enumerate(nums):
+            if num == target:
+                indices.append(i)
+
+        if not indices:
+            return [-1,-1]
+        else:
+            return [indices[0], indices[-1]]
+
+
+
+        
