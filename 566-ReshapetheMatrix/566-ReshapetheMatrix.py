@@ -1,23 +1,31 @@
-# Last updated: 31/12/2025, 22:33:51
+# Last updated: 01/01/2026, 04:01:48
 1class Solution(object):
-2    def lengthOfLongestSubstring(self, s):
+2    def combinationSum(self, candidates, target):
 3        """
-4        :type s: str
-5        :rtype: int
-6        """
-7        if len(s) == 0:
-8            return 0
+4        :type candidates: List[int]
+5        :type target: int
+6        :rtype: List[List[int]]
+7        """
+8        res = []
 9
-10        char_set = set()
-11        maxlen = 0
-12        left = 0
-13
-14        for i in range(len(s)):
-15            while s[i] in char_set:
-16                char_set.remove(s[left])
-17                left += 1
-18
-19            char_set.add(s[i])
-20            maxlen = max(maxlen, i - left + 1)
+10        def backtrack(i, current, total):
+11            if total == target:
+12                res.append(list(current))
+13                return
+14
+15            if i >= len(candidates) or total > target:
+16                return
+17
+18            current.append(candidates[i])
+19            backtrack(i, current, total + candidates[i])
+20            current.pop()
 21
-22        return maxlen
+22            backtrack(i + 1, current, total)
+23
+24        backtrack(0, [], 0)
+25        return res
+26
+27
+28
+29
+30        
