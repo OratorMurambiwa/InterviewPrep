@@ -1,20 +1,14 @@
-# Last updated: 31/12/2025, 20:17:18
+# Last updated: 31/12/2025, 20:30:30
 1class Solution(object):
-2    def canReorderDoubled(self, arr):
+2    def isToeplitzMatrix(self, matrix):
 3        """
-4        :type arr: List[int]
+4        :type matrix: List[List[int]]
 5        :rtype: bool
 6        """
-7
-8        count = Counter(arr)
-9
-10        for x in sorted(arr, key = abs):
-11            if count[x] == 0:
-12                continue
-13            if count[2*x] == 0:
-14                return False
-15            count[x] -=1
-16            count[2*x] -=1
-17        return True
-18        
-19        
+7        rows, cols = len(matrix), len(matrix[0])
+8
+9        for i in range(1, rows):
+10            for j in range(1, cols):
+11                if matrix[i][j] != matrix[i-1][j-1]:
+12                    return False
+13        return True
