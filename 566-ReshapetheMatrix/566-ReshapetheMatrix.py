@@ -1,27 +1,23 @@
-# Last updated: 31/12/2025, 21:30:33
+# Last updated: 31/12/2025, 22:33:51
 1class Solution(object):
-2    def longestPalindrome(self, words):
+2    def lengthOfLongestSubstring(self, s):
 3        """
-4        :type words: List[str]
+4        :type s: str
 5        :rtype: int
 6        """
-7        count = Counter(words)
-8        length = 0
-9        center = False
-10
-11        for word, freq in count.items():
-12            rev = word[::-1]
+7        if len(s) == 0:
+8            return 0
+9
+10        char_set = set()
+11        maxlen = 0
+12        left = 0
 13
-14            if word == rev:
-15                length += (freq//2) * 4
-16                if freq % 2 == 1:
-17                    center = True
+14        for i in range(len(s)):
+15            while s[i] in char_set:
+16                char_set.remove(s[left])
+17                left += 1
 18
-19            elif word < rev:
-20                pairs = min(freq, count[rev])
-21                length += pairs * 4
-22
-23        if center:
-24            length +=2
-25
-26        return length
+19            char_set.add(s[i])
+20            maxlen = max(maxlen, i - left + 1)
+21
+22        return maxlen
