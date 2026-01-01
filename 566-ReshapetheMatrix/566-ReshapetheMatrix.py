@@ -1,14 +1,29 @@
-# Last updated: 31/12/2025, 20:30:30
+# Last updated: 31/12/2025, 20:45:11
 1class Solution(object):
-2    def isToeplitzMatrix(self, matrix):
+2    def longestPalindrome(self, s):
 3        """
-4        :type matrix: List[List[int]]
-5        :rtype: bool
+4        :type s: str
+5        :rtype: int
 6        """
-7        rows, cols = len(matrix), len(matrix[0])
+7        freq = defaultdict(int)
 8
-9        for i in range(1, rows):
-10            for j in range(1, cols):
-11                if matrix[i][j] != matrix[i-1][j-1]:
-12                    return False
-13        return True
+9        for char in s:
+10            freq[char] += 1
+11        
+12        length = 0
+13        odd = False
+14
+15        for count in freq.values():
+16            if count % 2 == 0:
+17                length += count
+18            else:
+19                length += count -1
+20                odd = True
+21        
+22        if odd:
+23            return length + 1
+24        else:
+25            return length
+26
+27
+28        
