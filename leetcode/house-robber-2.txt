@@ -1,0 +1,16 @@
+class Solution(object):
+    def rob(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        prevh = 0
+        prev2h = 0
+
+        for i in nums:
+            new_total = max(prevh, prev2h + i)
+            prev2h = prevh
+            prevh = new_total
+
+        return prevh
+        
