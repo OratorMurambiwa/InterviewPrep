@@ -1,33 +1,21 @@
-# Last updated: 04/01/2026, 21:14:17
+# Last updated: 04/01/2026, 21:38:16
 1class Solution(object):
-2    def findPairs(self, nums, k):
+2    def largestLocal(self, grid):
 3        """
-4        :type nums: List[int]
-5        :type k: int
-6        :rtype: int
-7        """
-8        # if k < 0:
-9        #     return 0
-10
-11        freq = defaultdict(int)
-12
-13        for x in nums:
-14            freq[x] += 1
-15
-16        count = 0
-17        
-18        if k == 0:
-19            for x in freq:
-20                if freq[x] > 1:
-21                    count += 1
-22            return count
-23
-24        for x in freq:
-25            if x + k in freq:
-26                count += 1
-27        return count
-28
-29
-30
-31
-32
+4        :type grid: List[List[int]]
+5        :rtype: List[List[int]]
+6        """
+7        n = len(grid)
+8        res = [[0]* (n-2) for _ in range(n-2)]
+9
+10        for i in range(n-2):
+11            for j in range(n-2):
+12                maxval = 0
+13
+14                for r in range(i, i+3):
+15                    for c in range(j, j+3):
+16                        maxval = max(maxval, grid[r][c]) 
+17
+18                res[i][j] = maxval
+19        return res
+20        
