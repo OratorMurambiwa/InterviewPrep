@@ -1,21 +1,34 @@
-# Last updated: 04/01/2026, 21:38:16
+# Last updated: 05/01/2026, 13:51:29
 1class Solution(object):
-2    def largestLocal(self, grid):
+2    def numberOfSubarrays(self, nums, k):
 3        """
-4        :type grid: List[List[int]]
-5        :rtype: List[List[int]]
-6        """
-7        n = len(grid)
-8        res = [[0]* (n-2) for _ in range(n-2)]
-9
-10        for i in range(n-2):
-11            for j in range(n-2):
-12                maxval = 0
-13
-14                for r in range(i, i+3):
-15                    for c in range(j, j+3):
-16                        maxval = max(maxval, grid[r][c]) 
+4        :type nums: List[int]
+5        :type k: int
+6        :rtype: int
+7        """
+8        res = 0
+9        l = 0
+10        m = 0
+11        odd = 0
+12
+13        for r in range(len(nums)):
+14            if nums[r] % 2:
+15                odd += 1
+16                m = l  
 17
-18                res[i][j] = maxval
-19        return res
-20        
+18            while odd > k:
+19                if nums[l] % 2:
+20                    odd -= 1
+21                l += 1
+22                m = l  
+23
+24            if odd == k:
+25                while m <= r and nums[m] % 2 == 0:
+26                    m += 1
+27                res += (m - l + 1)
+28
+29        return res
+30
+31
+32
+33
