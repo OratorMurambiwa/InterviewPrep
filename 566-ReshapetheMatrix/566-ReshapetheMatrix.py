@@ -1,25 +1,20 @@
-# Last updated: 07/01/2026, 13:37:58
+# Last updated: 07/01/2026, 13:56:25
 1class Solution(object):
-2    def insert(self, intervals, newInterval):
+2    def merge(self, intervals):
 3        """
 4        :type intervals: List[List[int]]
-5        :type newInterval: List[int]
-6        :rtype: List[List[int]]
-7        """
-8        
-9        res = []
+5        :rtype: List[List[int]]
+6        """
+7        intervals.sort()
+8
+9        res = [intervals[0]]
 10
-11        for i in range(len(intervals)):
-12            if newInterval[1] < intervals[i][0]:
-13                res.append(newInterval)
-14                return res + intervals[i:]
-15            elif newInterval[0] > intervals[i][1]:
-16                res.append(intervals[i])
-17            else:
-18                newInterval = [
-19                    min(newInterval[0], intervals[i][0]),
-20                    max(newInterval[1], intervals[i][1])
-21                ]
-22        res.append(newInterval)
-23
-24        return res
+11        for start, end in intervals[1:]:
+12            lastend = res[-1][1]
+13            if start <= lastend:
+14                res[-1][1] = max(lastend, end)
+15            else:
+16                res.append([start, end])
+17
+18        return res
+19
