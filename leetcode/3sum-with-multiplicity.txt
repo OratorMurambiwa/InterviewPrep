@@ -1,0 +1,19 @@
+                    continue
+
+                if c not in count:
+                    continue
+                
+                ca, cb, cc = count[a], count[b], count[c]
+
+                if a == b == c:
+                if c < b:
+
+                c = target - a - b
+
+                b = keys[j]
+            for j in range(i, n):
+
+            a = keys[i]
+        for i in range(n):
+
+        ans = 0
