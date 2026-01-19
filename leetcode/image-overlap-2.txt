@@ -1,0 +1,18 @@
+                    one1.append((i, j))
+                if img2[i][j] == 1:
+                    one2.append((i,j))
+
+        for x1, y1 in one1:
+            for x2, y2 in one2:
+                if img1[i][j] == 1:
+            for j in range(n):
+        for i in range(n):
+
+        shift = Counter()
+        one2 = []
+        one1 = []
+        n = len(img1)
+        """
+        :rtype: int
+                dx = x2 - x1
+                dy = y2 - y1
