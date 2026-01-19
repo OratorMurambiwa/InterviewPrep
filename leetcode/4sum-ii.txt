@@ -1,0 +1,6 @@
+            for d in nums4:
+                cd_total = c + d
+                needed = -cd_total
+                res += sumAB[needed]
+        
+        return res
