@@ -1,29 +1,20 @@
-# Last updated: 19/01/2026, 12:45:33
+# Last updated: 19/01/2026, 15:37:23
 1class Solution(object):
-2    def largestOverlap(self, img1, img2):
+2    def countSquares(self, matrix):
 3        """
-4        :type img1: List[List[int]]
-5        :type img2: List[List[int]]
-6        :rtype: int
-7        """
-8        n = len(img1)
-9        one1 = []
-10        one2 = []
-11        shift = Counter()
-12
-13        for i in range(n):
-14            for j in range(n):
-15                if img1[i][j] == 1:
-16                    one1.append((i, j))
-17                if img2[i][j] == 1:
-18                    one2.append((i,j))
-19
-20        for x1, y1 in one1:
-21            for x2, y2 in one2:
-22                dx = x2 - x1
-23                dy = y2 - y1
-24                shift[(dx,dy)] += 1
-25
-26        return max(shift.values() or [0])
-27
-28        
+4        :type matrix: List[List[int]]
+5        :rtype: int
+6        """
+7        m, n = len(matrix), len(matrix[0])
+8        dp = [[0]*n for _ in range(m)]
+9        total = 0
+10
+11        for i in range(m):
+12            for j in range(n):
+13                if matrix[i][j] == 1:
+14                    if i == 0 or j ==0:
+15                        dp[i][j] = 1
+16                    else:
+17                        dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])
+18                total += dp[i][j]
+19        return total
