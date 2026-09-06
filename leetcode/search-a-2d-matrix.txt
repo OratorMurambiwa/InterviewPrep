@@ -1,0 +1,18 @@
+
+        l = 0
+        r = (m * n) - 1
+
+        while l <= r:
+            mid = (l + r) // 2
+
+            row = mid // n
+            col = mid % n
+            curr = matrix[row][col]
+
+            if curr < target:
+                l = mid + 1
+            elif curr > target:
+                r = mid - 1
+            else:
+                return True
+        return False
